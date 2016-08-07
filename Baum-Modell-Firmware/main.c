@@ -49,7 +49,7 @@ void setup_timers(void)
     NRF_TIMER2->BITMODE = TIMER_BITMODE_BITMODE_16Bit;
     // Set timer compare values
     NRF_TIMER2->CC[0] = 1;
-    NRF_TIMER2->CC[1] = 32768;
+    NRF_TIMER2->CC[1] = 62500;//32768;
 
     // Enable interrupt on Timer 2, both for CC[0] and CC[1] compare match events
     NRF_TIMER2->INTENSET =
@@ -67,19 +67,30 @@ volatile uint32_t r = 0;
 inline void pattern_rotation()
 {
     // vorherige aus
-    for(int i = 0; i<10; i++)
-    {
-        neopixel_set_color(&strip[r], i, 0, 0, 0);
-    }
+	 for(int i = 0; i<10; i++)
+	    {
+	       // neopixel_set_color_and_show(&strip[r], i, 0, 0, 20);
+		 neopixel_clear(&strip[r]);
+
+	    }
     strip_changed[r] = true;
 
     r = (r+1) % 8;
 
     // naechste an
-    for(int i = 0; i<10; i++)
-    {
-        neopixel_set_color(&strip[r], i, 0, 0, 10);
-    }
+
+    for(int j = 50; j>0; j--)
+	{
+    	for(int i = 0; i<10; i++)
+    	{
+    		for(int k = 0; k<8; k++)
+    		{
+    			neopixel_set_color_and_show(&strip[k], i, 0, 0, j);
+    			nrf_delay_ms(105);
+
+			}
+		}
+	}
     strip_changed[r] = true;
 }
 
@@ -100,14 +111,14 @@ void TIMER2_IRQHandler()
 
         // update all the strips
         // if they have changed
-        for (int i=0; i<8; i++)
-        {
-            if (strip_changed[i])
-            {
-                neopixel_show(&strip[i]);
-                strip_changed[i] = false;
-            }
-        }
+//        for (int i=0; i<8; i++)
+//        {
+//            if (strip_changed[i])
+//            {
+//                neopixel_show(&strip[i]);
+//                strip_changed[i] = false;
+//            }
+//        }
     }
 
     else if (NRF_TIMER2->EVENTS_COMPARE[1] && (NRF_TIMER2->INTENSET & TIMER_INTENSET_COMPARE1_Msk))

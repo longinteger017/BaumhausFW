@@ -1,7 +1,6 @@
 
-OPENOCD = /home/code/openocd/src/openocd
-
-OPENOCD_CFG = $(OPENOCD_CFG_DIR)openocd-incircuit.cfg
+OPENOCD = /usr/local/bin/openocd
+OPENOCD_CFG = $(OPENOCD_CFG_DIR)openocd.cfg
 #OPENOCD_CFG = $(OPENOCD_CFG_DIR)openocd-100ask.cfg
 
 erase:

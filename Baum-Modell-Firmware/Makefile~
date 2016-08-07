@@ -6,7 +6,7 @@ C_SOURCE_FILES += nrf_delay.c
 C_SOURCE_FILES += neopixel.c
 
 OUTPUT_FILENAME := main
-SDK_PATH = ../../nRFprogramming/nrf51822
+SDK_PATH = ../NordicSemiconductor/SDK_6.1.0/
 
 
 #Uncomment correct line if you have s110 programmed on the chip.
