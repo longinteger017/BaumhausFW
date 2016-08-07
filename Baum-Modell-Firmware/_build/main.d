@@ -1,0 +1,19 @@
+_build/main.o: main.c /usr/lib/gcc/arm-none-eabi/4.9.3/include/stdbool.h \
+ /usr/lib/gcc/arm-none-eabi/4.9.3/include/stdint.h \
+ /usr/arm-none-eabi/include/stdint.h \
+ /usr/arm-none-eabi/include/machine/_default_types.h \
+ /usr/arm-none-eabi/include/sys/features.h \
+ /usr/arm-none-eabi/include/sys/_intsup.h \
+ /usr/arm-none-eabi/include/sys/_stdint.h \
+ ../../nRFprogramming/nrf51822/Include/nrf51.h \
+ ../../nRFprogramming/nrf51822/Include/gcc/core_cm0.h \
+ ../../nRFprogramming/nrf51822/Include/gcc/core_cmInstr.h \
+ ../../nRFprogramming/nrf51822/Include/gcc/core_cmFunc.h \
+ ../../nRFprogramming/nrf51822/Include/system_nrf51.h \
+ ../../nRFprogramming/nrf51822/Include/nrf_delay.h \
+ ../../nRFprogramming/nrf51822/Include/nrf.h \
+ ../../nRFprogramming/nrf51822/Include/nrf51.h \
+ ../../nRFprogramming/nrf51822/Include/nrf51_bitfields.h \
+ ../../nRFprogramming/nrf51822/Include/nrf51_deprecated.h \
+ ../../nRFprogramming/nrf51822/Include/compiler_abstraction.h \
+ ../../nRFprogramming/nrf51822/Include/nrf_gpio.h neopixel.h
