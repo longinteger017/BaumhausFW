@@ -44,7 +44,7 @@ void setup_timers(void)
     // No shortcuts
     NRF_TIMER2->SHORTS = 0;
     // Set prescaler: 0-9. Higher number gives slower timer. 0 gives 16MHz timer.
-    NRF_TIMER2->PRESCALER = 6;
+    NRF_TIMER2->PRESCALER = 9;
     // Set timer bit resolution
     NRF_TIMER2->BITMODE = TIMER_BITMODE_BITMODE_16Bit;
     // Set timer compare values
@@ -78,17 +78,19 @@ inline void pattern_rotation()
     r = (r+1) % 8;
 
     // naechste an
-
+    // Licht Staerke
     for(int j = 50; j>0; j--)
 	{
+    	// LED Index
     	for(int i = 0; i<10; i++)
     	{
+    		// alle LEDs
     		for(int k = 0; k<8; k++)
     		{
     			neopixel_set_color_and_show(&strip[k], i, 0, 0, j);
-    			nrf_delay_ms(105);
 
 			}
+
 		}
 	}
     strip_changed[r] = true;
