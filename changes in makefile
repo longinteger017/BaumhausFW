@@ -1,0 +1,13 @@
+Makefile Änderung:
+SDK_PATH = ../../nRFprogramming/nrf51822/
+
+
+Makefile.playground Änderung:
+LDFLAGS += -L /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/ 
+
+
+debug/makefile (openocd)
+
+OPENOCD = /usr/local/bin/openocd
+OPENOCD_CFG = $(OPENOCD_CFG_DIR)openocd.cfg
+
